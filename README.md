@@ -1,84 +1,149 @@
 # Blog Platform
 
-A full-stack blog platform built with NestJS, PostgreSQL, Prisma, React, and Material-UI.
+## Overview
+
+A full-stack blog platform with user authentication, post management, and commenting system built using:
+- Backend: NestJS, Prisma, PostgreSQL
+- Frontend: React, TypeScript, Redux Toolkit, Material-UI
 
 ## Features
 
-- User authentication and authorization (admin vs regular users)
-- CRUD operations for blog posts
-- Commenting system with moderation
-- Pagination/infinite scrolling for blog posts
-- Modern and responsive UI
+- User Authentication (Register, Login, Logout)
+- Role-based Access Control
+- Create, Read, Update, and Delete Blog Posts
+- Commenting System with Moderation
+- Responsive Design
+- State Management with Redux
+- JWT Authentication
+
+## Prerequisites
+
+- Node.js (v16+)
+- npm or yarn
+- PostgreSQL
 
 ## Project Structure
 
 ```
 blog-app/
-├── backend/             # NestJS application
-└── frontend/            # React application
+├── backend/          # NestJS Backend
+│   ├── src/
+│   │   ├── modules/
+│   │   ├── prisma/
+│   │   └── main.ts
+│   └── prisma/
+│       └── schema.prisma
+│
+└── frontend/         # React Frontend
+    ├── src/
+    │   ├── components/
+    │   ├── pages/
+    │   ├── store/
+    │   └── App.tsx
 ```
-
-## Prerequisites
-
-- Node.js (v16 or higher)
-- PostgreSQL
-- npm or yarn
 
 ## Getting Started
 
 ### Backend Setup
 
-1. Navigate to the backend directory:
+1. Navigate to backend directory
+2. Install dependencies
    ```bash
    cd backend
-   ```
-
-2. Install dependencies:
-   ```bash
    npm install
    ```
-
-3. Create a `.env` file and configure your environment variables:
-   ```
-   DATABASE_URL="postgresql://user:password@localhost:5432/blogdb"
-   JWT_SECRET="your-secret-key"
-   ```
-
-4. Run database migrations:
+3. Set up PostgreSQL database
+4. Configure `.env` file
+5. Run database migrations
    ```bash
    npx prisma migrate dev
    ```
-
-5. Start the development server:
+6. Start the server
    ```bash
    npm run start:dev
    ```
 
 ### Frontend Setup
 
-1. Navigate to the frontend directory:
+1. Navigate to frontend directory
+2. Install dependencies
    ```bash
    cd frontend
-   ```
-
-2. Install dependencies:
-   ```bash
    npm install
    ```
-
-3. Start the development server:
+3. Copy `.env.example` to `.env`
+4. Start development server
    ```bash
    npm start
    ```
 
-## API Documentation
+## Environment Variables
 
-The API documentation is available at `http://localhost:3000/api` when running the backend server.
+### Backend (`.env`)
+- `DATABASE_URL`: PostgreSQL connection string
+- `JWT_SECRET`: Secret for JWT token generation
+- `JWT_EXPIRATION`: Token expiration time
+
+### Frontend (`.env`)
+- `REACT_APP_API_BASE_URL`: Backend API base URL
+- `REACT_APP_ENABLE_COMMENTS`: Toggle commenting feature
+- `REACT_APP_DEBUG`: Enable debug mode
+
+## Deployment
+
+### Backend
+- Use Docker for containerization
+- Deploy to cloud platforms like Heroku, AWS, or DigitalOcean
+
+### Frontend
+- Build production assets
+- Deploy to static hosting platforms like Netlify, Vercel, or GitHub Pages
+
+## Testing
+
+### Backend
+```bash
+cd backend
+npm run test
+```
+
+### Frontend
+```bash
+cd frontend
+npm test
+```
+
+## Technologies
+
+### Backend
+- NestJS
+- Prisma ORM
+- PostgreSQL
+- JWT Authentication
+- Class Validator
+- Swagger Documentation
+
+### Frontend
+- React 18
+- TypeScript
+- Redux Toolkit
+- Material-UI
+- Axios
+- React Router
+- React Hook Form
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
+2. Create a feature branch
+3. Commit changes
 4. Push to the branch
-5. Create a new Pull Request
+5. Create a pull request
+
+## License
+
+[Specify your license]
+
+## Contact
+
+[Your Contact Information]
